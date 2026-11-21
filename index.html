@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guardianes del Grifo – ODS 6</title>
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento:wght@400;700&family=Open+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<nav class="rail" aria-label="Menú de juegos">
+  <button class="tab" id="tab" aria-expanded="false" aria-controls="cajon">
+    <span id="tabTexto">Desplegar Juegos</span> <span class="flecha" aria-hidden="true">▶</span>
+  </button>
+</nav>
+
+<div class="paisaje" id="cajon" role="dialog" aria-label="Elige un minijuego">
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="nube" viewBox="0 0 200 110"><g fill="currentColor"><circle cx="58" cy="70" r="36"/><circle cx="104" cy="50" r="44"/><circle cx="150" cy="70" r="34"/><rect x="30" y="66" width="152" height="40" rx="20"/></g></symbol>
+  </svg>
+  <button class="sol" id="sol">Sobre el ODS 6</button>
+
+  <svg class="colinas" viewBox="0 0 1440 340" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 120Q240 40 480 110T960 90T1440 100V340H0Z" fill="#8FDB93"/>
+    <path d="M0 190Q300 110 620 180T1240 160T1440 170V340H0Z" fill="#4DBD6A"/>
+    <path d="M0 270Q360 200 720 270T1440 250V340H0Z" fill="#1F9D4A"/>
+    <path d="M705 178C690 230 760 260 650 340L840 340C790 262 770 230 745 178Z" fill="#22BDE2"/>
+    <path d="M722 190C716 235 770 262 735 340" stroke="#fff" stroke-width="4" fill="none" opacity=".6"/>
+  </svg>
+
+  <!-- 3 nubes-botón (nombres de ejemplo, cámbialos por tus minijuegos) -->
+  <div class="nube nb n1" style="--t:8s;--dx:16px;--c:#FF1A1A"><button class="nube-btn" data-j="1" data-nombre="Componentes a la orden"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🧪</b>Componentes a la orden<i>¡Jugar!</i></span></button></div>
+  <div class="nube nb n2" style="--t:10s;--dx:-18px;--c:#FFE23A"><button class="nube-btn" data-j="2" data-nombre="¿Esto está mal?"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>❓</b>¿Esto está mal?<i>¡Jugar!</i></span></button></div>
+  <div class="nube nb n3" style="--t:9s;--dx:14px;--c:#178A3A"><button class="nube-btn" data-j="3" data-nombre="¡¿QUÉ HAGO?!"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🤔</b>¡¿QUÉ HAGO?!<i>¡Jugar!</i></span></button></div>
+
+  <!-- 3 nubes de tormenta (juegos difíciles) -->
+  <div class="nube tormenta t1" style="--c:#FFE23A;--tr:5s;--rd:0s"><svg class="rayo" viewBox="0 0 60 140"><polygon points="34,0 8,70 28,70 14,140 52,52 30,52 46,0" fill="#FFE23A" stroke="#fff" stroke-width="2"/></svg><button class="nube-btn" data-j="7" data-nombre="Memoria del agua"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🧠</b>Memoria del agua<i>¡Jugar!</i></span></button><span class="etiqueta-dificil">Juegos en difícil</span></div>
+  <div class="nube tormenta t2" style="--c:#FFE23A;--tr:6.5s;--rd:-2s"><svg class="rayo" viewBox="0 0 60 140"><polygon points="34,0 8,70 28,70 14,140 52,52 30,52 46,0" fill="#FFE23A" stroke="#fff" stroke-width="2"/></svg><button class="nube-btn" data-j="8" data-nombre="El viaje del agua"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🚰</b>El viaje del agua<i>¡Jugar!</i></span></button><span class="etiqueta-dificil">Juegos en difícil</span></div>
+  <div class="nube tormenta t3" style="--c:#FFE23A;--tr:5.5s;--rd:-4s"><svg class="rayo" viewBox="0 0 60 140"><polygon points="34,0 8,70 28,70 14,140 52,52 30,52 46,0" fill="#FFE23A" stroke="#fff" stroke-width="2"/></svg><button class="nube-btn" data-j="9" data-nombre="Alcalde del agua"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🏛️</b>Alcalde del agua<i>¡Jugar!</i></span></button><span class="etiqueta-dificil">Juegos en difícil</span></div>
+
+  <!-- 3 nubes blancas (juegos normales) -->
+  <div class="nube nb w1" style="--c:#FF1A1A"><button class="nube-btn" data-j="4" data-nombre="Recorre la casa"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🏠</b>Recorre la casa<i>¡Jugar!</i></span></button></div>
+  <div class="nube nb w2" style="--c:#178A3A"><button class="nube-btn" data-j="5" data-nombre="Agua segura"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🥛</b>Agua segura<i>¡Jugar!</i></span></button></div>
+  <div class="nube nb w3" style="--c:#7B3FE4"><button class="nube-btn" data-j="6" data-nombre="Presupuesto de agua"><svg class="forma" viewBox="0 0 200 110" aria-hidden="true"><use href="#nube"/></svg><span class="etq"><b>🚿</b>Presupuesto de agua<i>¡Jugar!</i></span></button></div>
+
+  <p class="titulo-paisaje">Elige una nube para jugar</p>
+  <button class="cerrar" id="cerrar">Ocultar Juegos</button>
+</div>
+
+<main id="escena">
+  <h1>Guardianes del Grifo</h1>
+  <p class="sub">ODS número 6, “Agua Limpia y Saneamiento”</p>
+  <p class="desc">El ODS 6 se centra en garantizar el acceso universal y equitativo al agua potable y a servicios de saneamiento e higiene adecuados. Este objetivo busca mejorar la calidad del agua a nivel global y proteger los ecosistemas relacionados con el agua.</p>
+
+  <!-- Logo recreado en SVG. Para usar el oficial: <img class="logo" src="ods6.png" alt="ODS 6"> -->
+  <svg class="logo" viewBox="0 0 300 300" role="img" aria-label="Logo ODS 6: Agua limpia y saneamiento">
+    <rect width="300" height="300" rx="22" fill="#22BDE2"/>
+    <text x="26" y="92" font-family="Impact,'Arial Narrow',sans-serif" font-size="80" fill="#fff">6</text>
+    <text x="92" y="58" font-family="'Arial Narrow',Arial,sans-serif" font-weight="700" font-size="25" fill="#fff">AGUA LIMPIA</text>
+    <text x="92" y="86" font-family="'Arial Narrow',Arial,sans-serif" font-weight="700" font-size="25" fill="#fff">Y SANEAMIENTO</text>
+    <path d="M88 150H212L198 226H102Z" fill="#fff"/>
+    <path d="M92 164Q120 154 150 164T208 164L206 176Q178 166 150 176T94 176Z" fill="#22BDE2"/>
+    <path d="M150 188C150 188 134 206 134 216a16 16 0 0 0 32 0C166 206 150 188 150 188Z" fill="#22BDE2"/>
+    <rect x="140" y="226" width="20" height="22" fill="#fff"/>
+    <path d="M120 246H180L150 278Z" fill="#fff"/>
+  </svg>
+
+  <p class="cierre">Para concienciar a las personas hemos decidido crear una página web interactiva en la que podemos disfrutar de diferentes juegos y a la vez podernos educar y crear conciencia acerca de la problemática del agua en nuestras localidades</p>
+
+  <div class="olas" aria-hidden="true">
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 45Q150 0 300 45T600 45T900 45T1200 45V90H0Z" fill="#22BDE2" opacity=".55"/></svg>
+    <svg viewBox="0 0 1200 90" preserveAspectRatio="none"><path d="M0 55Q150 15 300 55T600 55T900 55T1200 55V90H0Z" fill="#66D3EE"/></svg>
+  </div>
+</main>
+
+<footer>
+  <span>💧 Recuerda no desperdiciar el agua!</span>
+  <span>Página creada por el equipo 5</span>
+  <span>No contamines el agua! 💧</span>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitulo">
+  <div class="tarjeta"><h2 id="mTitulo"></h2><div id="mCont"></div></div>
+  <button class="cerrar" id="mCerrar">Volver a las nubes</button>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
